@@ -1,0 +1,116 @@
+## Nodejs版本选择
+
+选择 Nodejs 版本时，**应该** 优先考虑 LTS 版本，因为安全性和稳定性考虑，商业项目开发中 **不应该** 使用最新版本的 『Nodejs 一般发行版』 。
+
+| **版本** | **状态** | **代码**                                                     | Initial Release | 激活 LTS | 维护LTS 开始 | End-of-life |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| [v6](https://nodejs.org/download/release/latest-v6.x/) | Maintenance LTS | [Boron](https://nodejs.org/download/release/latest-boron/) | 2016-04-26      | 2016-10-18 | 2018-04-30 | 2019-04-30 |
+| [v8](https://nodejs.org/download/release/latest-v8.x/) | Maintenance LTS | [Carbon](https://nodejs.org/download/release/latest-carbon/) | 2017-05-30      | 2017-10-31 | 2019-01-01 | 2019-12-31 |
+| [v10](https://nodejs.org/download/release/latest-v10.x/) | Active LTS      | [Dubnium](https://nodejs.org/download/release/latest-dubnium/) | 2018-04-24      | 2018-10-30 | 2020-04-01 | 2021-04-01 |
+| [v11](https://nodejs.org/download/release/latest-v11.x/) | Current         |                                                              | 2018-10-23 |            | 2019-04-01 | 2019-06-30 |
+| V12 | LTS Pending |                                                              | 2019-04-23      | 2019-10-22 | 2021-04-01 | 2022-04-01 |
+
+
+
+## 开发和线上环境
+
+### 环境说明
+
+一般情况下，一个项目 **应该** 有以下三个基本的项目环境：
+
+- Local - 开发环境
+- Test - 线上测试环境
+- Production - 线上生产环境
+
+### 使用软件
+
+#### 服务器系统
+
+Nodejs 社区提倡使用 Linux 系统，开发环境 *`Nodejs Vagrant`* 中默认也是使用 Linux CentOS 7 系统。所以服务器系统 **应该** 优先考虑 CentOS 7，并且是 LTS 支持的系统。
+
+
+
+#### Nodejs 10.x
+
+Node 版本 **应该** 优先考虑 Nodejs 10.x。
+
+#### MySQL 5.7
+
+数据库软件 **应该** 优先选择 MySQL，因为其使用率最高。MySQL 5.7 已经是大势所趋，选择版本时 **应该** 优先考虑 MySQL 5.7。
+
+#### 其他软件
+
+**应该** 优先选择 **流行** **稳定** 版本。线上环境 **绝不** 使用 Beta 或者其他不稳定发行版。
+
+### Production 生产环境
+
+出于安全考虑，线上环境 **必须** 只开放以下端口：
+
+- 80 HTTP 
+- 443 HTTPS
+- 22 SSH
+
+### Local 开发环境
+
+所有项目 **必须** 使用 *`Nodejs Vagrant`* 作为应用程序运行的环境。
+
+* 统一使用域名 `test-` 作为前缀；
+* 统一使用 IP `192.168.10.10` 作为 `hosts` 绑定地址，如：`192.168.10.10  test-project-name.host.com`
+* 统一使用 `vm` alias，见文档 [通过 SSH 连接](http://learnku.com/docs/laravel/5.5/homestead#connecting-via-ssh)
+
+### Test 线上测试环境
+
+除了域名等其他独立应用配置以外，环境 **必须** 跟 Production 保持高度一致性，可以的话 **应该** 与 Production 使用同样配置的机器和网络环境。
+
+
+
+## 项目文档编写规范
+
+### 说明
+
+每一个项目都 **必须** 包含一个 `readme.md` 文件，`readme` 里书写这个项目的简单信息。作用主要有两个，一个是团队新成员可从此文件中快速获悉项目大致情况，另一个是部署项目时可以作为参考。
+
+### 1. 排版规范
+
+文档页面排版 **必须** 遵循 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) ，在此基础上：
+
+* 中文文档请使用全角标点符号；
+* **必须** 遵循 Markdown 语法，勿让代码显示错乱；
+* 原文中的双引号（" "）请代换成中文的引号（『』符号怎么打出来见 [这里](http://zhihu.com/question/19755746/answer/27233392)）。
+* 所有的 「`加亮`」、「**加粗**」和「[链接]()」都需要在左右保持一个空格。
+
+### 2. 行文规范
+
+`readme.md` 文档 **应该** 包含以下内容：
+
+* 「项目概述」- 介绍说明项目的一些情况，类似于简单的产品说明，简单的功能描述，项目相关链接等，500 字以内；
+* 「运行环境」- 运行环境说明，系统要求等信息；
+* 「开发环境部署/安装」- 一步一步引导说明，保证项目新成员能最快速的，没有歧义的部署好开发环境；
+* 「服务器架构说明」- 最好能有服务器架构图，从用户浏览器请求开始，包括后端缓存服务使用等都描述清楚（主要体现为软件的使用），配合「运行环境」区块内容，可作为线上环境部署的依据；
+* 「代码上线」- 介绍代码上线流程，需要执行哪些步骤；
+* 「扩展包说明」- 表格列出所有使用的扩展包，还有在哪些业务逻辑或者用例中使用了此扩展包；
+* 「自定义命令列表」- 以表格形式罗列出所有自定义的命令，说明用途，指出调用场景；
+* 「队列列表」- 以表格形式罗列出项目所有队列接口，说明用途，指出调用场景。
+
+
+
+## 工具统一
+
+工具的统一，是为了方便工作流的统一，还有工具使用经验的传承。
+
+团队里的成员，经常需要互相使用对方电脑来讨论问题、查看某段代码、Debug 某个功能，工具统一起来后，你会发现，虽然是别人的电脑，工具使用起来是熟悉的，用起来就跟自己的电脑一样顺手，自然的工作效率就会提高。
+
+* 硬件：Retina MacBook Pro 15 寸
+* 系统：Mac 版本 10.10 以上
+* 编辑器：[VS Code](<https://code.visualstudio.com/>)
+* 编辑器代码格式化：ESLint、StandarJS
+* 代码质量校验器：SonarLint
+* 命令行工具：[iTerm2](https://www.iterm2.com/)
+* 浏览器：[Chrome](https://www.google.com/chrome/browser/desktop/index.html)
+* 虚拟机：[VirtualBox](https://www.virtualbox.org/)
+* MySQL 数据库查询工具：[Sequel Pro](http://www.sequelpro.com/) Or Navicat
+* Redis 管理工具：[RDM](http://redisdesktop.com/)
+* MongoDB 管理工具：[MongoDB](https://robomongo.org/)
+* 设计工具：[Sketch 3](https://www.sketchapp.com/)
+* 视频播放：[MPlayerX](http://mplayerx.org/)
+* @todo zsh 的配置信息统一，Alias 等信息。

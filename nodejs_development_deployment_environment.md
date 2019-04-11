@@ -1,0 +1,223 @@
+## 基本信息
+
+### 序言
+
+> 本套教程是为『Nodejs 全栈开发』量身定制的。
+
+学习本课程时，你需要提前知道这些信息：
+
+- 本课程是为业务里的实战服务的，所以行文的语气是假定你为实战的学习者；
+- 本课程会不定期保持更新；
+- 我们使用定制的 `Vagrant box`，一是提高下载速度，二是统一研发环境；
+- 不要尝试建议我们使用 `Docker`，我们需要的是一个无限接近 `Linux `的环境。
+
+还有一个需要注意的是，对于命令行和编辑器等软件，我们有特定的选择，请不要来建议我们` WebStorm `更好用或者 `Vim `是最好的编辑器。我们这样的选择，是出于对完全的实战程序员的效率提升 —— 选择一个最合理的一款软件，然后在所有的实战中统一使用，保持一致性，并且以后在工作中也能持续使用。
+
+本文档的内容，都是以专业的『商业应用开发』为导向，而不是以个人喜好为导向。我们的目标是培养具备 **方案能力** 的全栈工程师，我们希望读者在学习完整套课程以后，能为公司提供完整的开发和生产解决方案。如果你的职业定位是 技术主管、架构师、或者 CTO，你会喜欢上我们的课程的。
+
+## 开发者工具
+
+### 编辑器选用
+
+在开发 Nodejs 应用时，有很多的编辑器可供选择使用，比较流行的有
+
+- SublimeText
+- Atom
+- PHPStorm
+- Visual Studio
+- Vim
+- Eclipse
+- VS Code
+
+本文档的所有代码均使用 VS Code（下面简称 VSC）进行编写。为了保证我们的整个开发环境完全一致，你需要在你的电脑上安装和使用 VS Code 来进行所有代码的编写。
+
+VS Code 是一款跨平台的代码编辑器，跨平台意味着你可以在流行的系统如 `OS X`、`Windows`、或者 `Linux` 上安装和使用 VS Code。
+
+#### 为什么选用 VS Code？
+
+挑选一款好的编辑器，你需要考虑的以下方面：
+
+- **跨平台**
+	对编辑器熟练程度很大程度上决定了你的编码速度，如果你熟练使用 Windows 下的 Notepad++ 好几年，切换到 Mac 下开发后，你就只能选择其他编辑器，并且你会花费很长时间来熟悉新的编辑器，所以在一开始使用跨平台的编辑器是比较明智的选择；
+- **启动速度快** 和 **搜索速度快**
+	假如每次启动编辑器都需要 10 秒钟，每天启动编辑器 5 次，一年 365 天，20 年你需要花费 365000 秒，除以一天 86400 秒以后，就能得出来 20 年内你使用一个启动慢的编辑器你会白白浪费了 4.224537037 天，人生苦短，请选择快速的编辑器。
+- **社区强大**
+	社区强大表现在插件和主题的丰富多样，社区强大带来的好处是编辑器的功能会与时俱进，可以避免例如 SASS 或者 Blade 等新语法出现时，因为没有语法高亮导致你可能需要选择其他编辑器。
+
+VS Code 是综合以上多方面考虑最优的选项。再加上 VS Code 的界面优雅、易上手等优点，使其得到不少程序员的追捧和赞赏。
+
+#### 如何安装？
+
+你可以直接前往 [VS Code 官网](https://code.visualstudio.com/) 下载安装 VS Code，并学习一下 VS Code 的基本使用。
+
+
+
+### 命令行工具
+
+#### 命令行是程序员的好伙伴
+
+作为一名优秀的程序员，熟练的命令行操作也是必不可少的。在『Nodejs 全栈开发』文档中，我们的很多操作都会使用到命令行，如：
+
+- Git 操作；
+- 虚拟机管理；
+- 部署到线上等。
+
+工欲善其事、必先利其器，命令行工具的选择也尤其重要。这里为了课程讲解的一致性，也为了避免大家在学习中犯不必要的错误，我们为各个平台挑选了专属的命令行工具，请大家配合使用。
+
+#### Mac 用户
+
+Mac OS 下请使用 [iTerm2](https://www.iterm2.com/downloads.html)，你不需要对其做太多定制，默认配置先用起来即可，等使用比较舒适了，再进行深入学习。
+
+> 百度盘下载：https://pan.baidu.com/s/1slWENqH
+
+<img src="https://iocaffcdn.phphub.org/uploads/images/201705/15/1/Z4QBFzczaZ.png" width="530">
+
+
+#### Windows 用户
+
+Windows 用户请使用 GitHub 出品的 [Git for Windows](https://github.com/git-for-windows/git/releases/latest)。下载后直接安装，不要求做过多配置，默认即可。
+
+> 百度盘下载：https://pan.baidu.com/s/1jH6o5sa
+
+<img src="https://iocaffcdn.phphub.org/uploads/images/201705/15/1/eXdPPsSjzG.png" width=450>
+
+#### 编辑器设置命令行快捷访问
+
+在VS Code 中，Ctrl + ` 可以打开默认的命令行工具
+
+### 浏览器选择
+
+#### 统一使用 Chrome
+
+作为 Web 开发者，我们的无论是浏览信息或者开发项目，都离不开浏览器。在本站的系列课程中，为了避免歧义，我们 **要求** 大家统一使用 **Chrome** 作为指定浏览器。
+
+Google Chrome，是一款由 Google 公司开发的网页浏览器。Chrome 在 2008 年 9 月 2 日发布 Beta 版本，一经发布就广受好评。提供 50 种语言版本，有 Windows、OS X、Linux、Android、以及 iOS 版本提供下载。
+
+> 对于访问国外网络慢的同学，我们为你提供了百度盘下载：[Mac 用户](https://pan.baidu.com/s/1slWENqH) 或是 [Windows 用户](https://pan.baidu.com/s/1jH6o5sa)。
+
+
+#### 为什么选择 Chrome？
+
+##### 1. 因为市场占有率第一
+
+根据 [statcounter.com](http://gs.statcounter.com/browser-market-share) 的数据，Chrome 浏览器市场占有率排第一：
+
+![file](https://iocaffcdn.phphub.org/uploads/images/201705/26/1/qMmIAn3dYv.png)
+
+根据 [百度统计公开数据](http://tongji.baidu.com/data/browser)，Chrome 浏览器在国内市场占有率第一：
+
+![file](https://iocaffcdn.phphub.org/uploads/images/201705/26/1/4qgM6ww3Ca.png)
+
+##### 2. 功能强大
+
+Chrome 有一个非常强大的『开发者工具栏』，你可以利用它实时修改 HTML 结构、更改 CSS 属性、断点调试 JavaScript 代码、监控网页 HTTP 请求等：
+
+
+强大的插件系统，[Chrome 商店](https://chrome.google.com/webstore/category/extensions?hl=en) 上有各式各样的插件提供下载：
+
+![file](https://iocaffcdn.phphub.org/uploads/images/201705/26/1/SsrPIE4Byb.gif)
+
+
+##### 3. 开放的生态圈
+
+**Webkit** 是 Chrome 底层的渲染引擎，目前 WebKit 基本上是一统天下了，后台有两家大公司在支持，一个是 Google 一个是 Apple。当前主流的浏览器 Chrome、Safari、Opera、遨游、猎豹、百度浏览器、搜狗浏览器、360极速浏览器等都是由 **Webkit** 在驱动着。
+
+**Chromium** 是 Google Chrome 的开源版本，国内很多浏览器产商都是基于它来定制开发，然后推出自己品牌的浏览器。
+
+**Atom** 基于 Electron 开发的，而 Electron 是基于 Webkit 项目开发的，你在使用 Atom 时，也可以很轻松的召唤出 Chrome 开发者工具。（因启动速度过慢，本站课程中优先推荐使用 VS Code）
+
+![file](https://iocaffcdn.phphub.org/uploads/images/201705/26/1/KJg4q43mrV.gif)
+
+现代浏览器一般有两个渲染引擎，一个 Dom 页面渲染引擎，一个是 JavaScript 引擎。Webkit 是 Chrome 的 Dom 页面渲染引擎。Chrome 的 JavaScript 引擎叫 **V8**，很酷的名字，不过听说过这个的人应该不多。V8 比较知名的应用是 **node.js**， 2009 年 5 月份，Ryan Dahl 将 V8 放到服务器端，为 JavaScript 提供了一个服务器端的运行环境，就变成了 node.js。
+
+
+综上所述，可以看出 Chrome 拥有一个非常开放的生态圈，以上提到的软件都是完全的代码开源。其中大部分技术的发展趋势非常快速，作为开发者，你会越来越发现身边的环境会被其影响到。既然是趋势，作为新手的我们，跟着趋势走，大概方向上错不了。
+
+最后再强调一次，请不要使用除了 Chrome 之外的其他浏览器。虽然浏览器兼容性是一个 Web 开发离不开的话题，但是超出了我们本教程的讨论范畴。
+
+
+
+## 开发环境部署
+
+### 如何统一开发环境
+
+#### 如何统一开发环境？
+
+在日常的团队开发中，由于开发环境的不一致，往往会导致出现各种各样的问题。即便是经验丰富的工程师，在遇到这种问题时也会特别头疼。为了解决这种问题，Vagrant 顺势而生！Vagrant 是一个用于创建和部署虚拟化开发环境的工具，其依赖于 VirtualBox 虚拟机，致力于帮助开发者快速构建一个环境统一的虚拟系统。Vagrant 最强大的地方是在于它在构建虚拟系统时的快捷简便，使开发者可以在短短几分钟内完成一个虚拟系统的删除与构建。
+
+Nodejs 希望在 Vagrant 的基础上让开发环境更加统一，让开发者都能在指定的具体开发环境下使用 Nodejs。*`Nodejs Vagrant`* 提供的默认开发环境还会装上很多常用的开发工具来辅助 Nodejs 进行项目开发，包括 ：
+
+- Nginx
+
+- Redis
+
+- Memcached
+
+- RabitMQ
+
+- RTS
+
+- MySQL
+
+- Git
+
+- Node.js
+
+- NPM
+
+- NVM
+
+- PM2 
+
+  
+
+  等等。或许你对这里提到的一些专有词汇所涉及到的知识并不太了解，但是别担心，这些我们在后面章节都会作相关介绍。
+
+#### 可以不使用 Nodejs Vagrant 吗？
+
+> 不可以。
+
+*`Nodejs Vagrant`* 是 Nodejs 我们推荐的开发环境。在本书里，我们会强制读者使用 *`Nodejs Vagrant`*，原因主要有以下：
+
+- *`Nodejs Vagrant`* 是本书很重要的技能点之一，学完此书，你必须学会 Vagrant；
+- *`Nodejs Vagrant`* 统一了环境，避免歧义，减少新手在学习中遇到不必要的卡顿；
+- 统一环境带来的好处还有：当你遇到问题的时候，其他同学能很容易的帮助到你；
+- 最大程度接近线上生产环境，为后续的课程做铺垫；
+- 这是最佳实践，是需要从一开始培养起来的好习惯。
+
+在现实的 Nodejs 项目开发中，比较正经的团队都会把 *`Nodejs Vagrant`* 当做绝对的开发环境要求。你在此处学完 *`Nodejs Vagrant`*，是一劳永逸的事情。
+
+因为 *`Nodejs Vagrant`* 有以上优点，我们会竭力为 *`Nodejs Vagrant`* 的学习扫清障碍。本书为读者定制了专属的 *`Nodejs Vagrant`* 环境，定制版的 *`Nodejs Vagrant`* 环境预装了必须的软件，软件的配置也依照国内网络环境做了优化，如配置了 NPM 国内镜像加速等。https://learnku.com/articles/4668/why-do-you-have-to-use-homestead-to-develop-laravel-applications)
+
+接下来我们会分别为你讲解 Windows 和 Mac 下的开发环境部署，请你根据系统类型选择阅读，使用 Ubuntu 的同学请参考 Mac 版的进行部署。
+
+
+
+## 软件使用
+
+
+
+### VS Code 编辑器插件必备集锦
+
+
+
+| 名称                                                         |                        |
+| ------------------------------------------------------------ | ---------------------- |
+| [Ant Design Snippets](<https://marketplace.visualstudio.com/itemdetails?itemName=bang.antd-snippets>) | Ant Design开发必备     |
+| [Color Highlight](<https://marketplace.visualstudio.com/itemdetails?itemName=naumovs.color-highlight>) | 高亮显示web颜色        |
+| [Document This](<https://marketplace.visualstudio.com/itemdetails?itemName=joelday.docthis>) | 自动生成注释格式       |
+| [ES7 React/Redux/GraphQL/React-Native snippets](<https://marketplace.visualstudio.com/itemdetails?itemName=dsznajder.es7-react-js-snippets>) | React最新的ES7语法必备 |
+| [ESLint](<https://marketplace.visualstudio.com/itemdetails?itemName=dbaeumer.vscode-eslint>) | 前端代码检验必备       |
+| [GitLens](<https://marketplace.visualstudio.com/itemdetails?itemName=eamodio.gitlens>) | git管理工具            |
+| [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/itemdetails?itemName=eamodio.gitlens) | ES6语法必备            |
+| [Live Server](<https://marketplace.visualstudio.com/itemdetails?itemName=ritwickdey.LiveServer>) | 静态文件服务           |
+| [Material Icon Theme](<https://marketplace.visualstudio.com/itemdetails?itemName=PKief.material-icon-theme>) | 非常好看的文件icon     |
+| [Material Theme](https://marketplace.visualstudio.com/itemdetails?itemName=Equinusocio.vsc-material-theme) | 非常好看的主题         |
+| [SonarLint](https://marketplace.visualstudio.com/itemdetails?itemName=SonarSource.sonarlint-vscode) | 代码质量检测，必备     |
+| [TODO Highlight](https://marketplace.visualstudio.com/itemdetails?itemName=wayou.vscode-todo-highlight) | 效率工具，高亮todo任务 |
+| [Vetur](<https://marketplace.visualstudio.com/itemdetails?itemName=octref.vetur>) | Vue开发必备            |
+| [Vue 2 Snippets](<https://marketplace.visualstudio.com/itemdetails?itemName=hollowtree.vue-snippets>) | Vue语法提示            |
+| [Vue](<https://marketplace.visualstudio.com/itemdetails?itemName=jcbuisson.vue>) | Vue文件解析            |
+| [StandardJS - JavaScript Standard Style](<https://marketplace.visualstudio.com/itemdetails?itemName=chenxsan.vscode-standardjs>) | Nodejs后端开发必备     |
+
+
