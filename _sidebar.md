@@ -1,4 +1,4 @@
-* [首页](zh-cn/)
+* [首页](/)
 * [关于规范](/about_the_specification.md)
 * [关于「能愿动词」的使用](/about_the_verbs.md)
 * [Nodejs开发部署环境](nodejs_development_deployment_environment.md)
