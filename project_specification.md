@@ -114,3 +114,5 @@ Node 版本 **应该** 优先考虑 Nodejs 10.x。
 * 设计工具：[Sketch 3](https://www.sketchapp.com/)
 * 视频播放：[MPlayerX](http://mplayerx.org/)
 * @todo zsh 的配置信息统一，Alias 等信息。
+
+![RMBP](https://dev-vr-static.oss-cn-shenzhen.aliyuncs.com/%E5%9B%BE%E7%89%8733.png)
