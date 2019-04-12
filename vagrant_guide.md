@@ -166,4 +166,48 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-   
+## 常见问题
+
+### ssh问题
+
+如下操作，替换了~/.ssh/目录下文件再打包
+
+```bash
+wget https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -O .ssh/authorized_keys
+chmod 700 .ssh
+chmod 600 .ssh/authorized_keys
+chown -R vagrant:vagrant .ssh
+```
+
+或者直接拷贝原打包目录.vagrant下的privacy key
+
+### mount: unknown filesystem type 'vboxsf'问题
+
+```bash
+vagrant plugin install vagrant-vbguest
+vagrant destroy && vagrant up
+```
+
+同步文件修改还要装插件
+
+```bash
+vagrant plugin install vagrant-winnfsd
+```
+
+
+
+### 打包的box文件过大压缩一下
+
+[VirtualBox压缩vmdk、vagrant打包box一口气全对](https://www.zh30.com/virtualbox-vmdk-vagrant-box.html)
+
+```bash
+
+$ VBoxManage showhdinfo name
+
+```
+
+### 热更新
+
+nodeman -L 
+
+提高io性能，启用nfs或samba
