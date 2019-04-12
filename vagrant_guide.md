@@ -4,6 +4,8 @@
 
 下载地址[https://test-superip.aiplussales.cn/release/](https://test-superip.aiplussales.cn/release/)
 
+阿里云加速地址 https://dev-vr-static.oss-cn-shenzhen.aliyuncs.com/box/nodejs_v1.0.12.zip
+
 该虚拟机默认使用私钥登录，第一次启动成功后，私钥存放在当前目录的`.vagrant/machines/default/virtualbox/private_key`文件中
 
 默认账号密码均为: `vagrant`
