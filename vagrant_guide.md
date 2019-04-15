@@ -4,7 +4,7 @@
 
 下载地址[https://test-superip.aiplussales.cn/release/](https://test-superip.aiplussales.cn/release/)
 
-阿里云加速地址 https://dev-vr-static.oss-cn-shenzhen.aliyuncs.com/box/nodejs_v1.0.12.zip
+阿里云加速地址 https://dev-vr-static.oss-cn-shenzhen.aliyuncs.com/box/nodejs_v1.0.13.zip
 
 该虚拟机默认使用私钥登录，第一次启动成功后，私钥存放在当前目录的`.vagrant/machines/default/virtualbox/private_key`文件中
 
@@ -172,28 +172,37 @@ $ vagrant ssh
 
 ### ssh问题
 
-如下操作，替换了~/.ssh/目录下文件再打包
+- 办法1:
+
+  如下操作，替换了~/.ssh/目录下文件再打包
+
+  ```bash
+  $ wget https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -O .ssh/authorized_keys
+  $ chmod 700 .ssh
+  $ chmod 600 .ssh/authorized_keys
+  $ chown -R vagrant:vagrant .ssh
+  ```
+
+  或者直接拷贝原打包目录.vagrant下的privacy key
+
+- 办法2:
+
+  将解压文件夹中的`private_key`拷贝到 `.vagrant/machines/default/virtualbox`目录下
+
+  
+
+### 共享文件夹出现问题
+可能的错误提示:`mount: unknown filesystem type 'vboxsf'`
 
 ```bash
-wget https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -O .ssh/authorized_keys
-chmod 700 .ssh
-chmod 600 .ssh/authorized_keys
-chown -R vagrant:vagrant .ssh
-```
-
-或者直接拷贝原打包目录.vagrant下的privacy key
-
-### mount: unknown filesystem type 'vboxsf'问题
-
-```bash
-vagrant plugin install vagrant-vbguest
-vagrant destroy && vagrant up
+$ vagrant plugin install vagrant-vbguest
+$ vagrant destroy && vagrant up
 ```
 
 同步文件修改还要装插件
 
 ```bash
-vagrant plugin install vagrant-winnfsd
+$ vagrant plugin install vagrant-winnfsd
 ```
 
 
@@ -210,6 +219,6 @@ $ VBoxManage showhdinfo name
 
 ### 热更新
 
-nodeman -L 
+nodemon -L 
 
 提高io性能，启用nfs或samba
