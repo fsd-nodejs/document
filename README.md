@@ -4,8 +4,9 @@
 
 
 * [首页](/)
-* [关于规范](/about_the_specification.md)
-* [关于「能愿动词」的使用](/about_the_verbs.md)
-* [Nodejs开发部署环境](nodejs_development_deployment_environment.md)
-* [项目规范](project_specification.md)
-* [Nodejs Vagrant使用指南](/vagrant_guide.md)
+* [关于规范](/关于规范.md)
+* [关于「能愿动词」的使用](/关于能愿动词.md)
+* [开发部署环境](/开发部署环境.md)
+* [项目规范](/项目规范.md)
+* [Nodejs Vagrant使用指南](/Vagrant指南.md)
+

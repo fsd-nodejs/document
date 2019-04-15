@@ -1,5 +1,3 @@
-<!-- # Nodejs全栈开发环境使用引导 -->
-
 ## 基础环境+工具
 
 下载地址[https://test-superip.aiplussales.cn/release/](https://test-superip.aiplussales.cn/release/)
