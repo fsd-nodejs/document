@@ -101,6 +101,7 @@ GIt ...
 ├── README.md
 ├── Vagrantfile
 ├── metadata.json
+├── private_key
 └── virtualbox.box
 ```
 
