@@ -7,4 +7,4 @@
 * [**工程规范-前端**](/工程规范-前端.md)
 * [**工程实践-前端**](/工程实践-前端.md)
 * [**杂项**](/杂项.md)
-* [**Nodejs Vagrant使用指南**](/Vagrant指南.md)
+* [**Node.js Vagrant使用指南**](/Vagrant指南.md)

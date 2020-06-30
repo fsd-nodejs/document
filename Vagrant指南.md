@@ -2,7 +2,7 @@
 
 下载地址[https://test-superip.aiplussales.cn/release/](https://test-superip.aiplussales.cn/release/)
 
-阿里云加速地址 https://dev-vr-static.oss-cn-shenzhen.aliyuncs.com/box/nodejs_v1.0.13.zip
+阿里云加速地址 https://dev-vr-static.oss-cn-shenzhen.aliyuncs.com/box/Node.js_v1.0.13.zip
 
 该虚拟机默认使用私钥登录，第一次启动成功后，私钥存放在当前目录的`.vagrant/machines/default/virtualbox/private_key`文件中
 
@@ -64,21 +64,21 @@ bind_ip: `0.0.0.0`
 
 可在虚拟机外访问
 
-### Nodejs
+### Node.js
 
 默认是lts版本，使用nvm进行管理，在~/.nvm目录
 
 ### NPM
 
-随nodejs安装的
+随Node.js安装的
 
 ### NVM
 
-nodejs管理工具，支持nodejs多版本自由切换
+Node.js管理工具，支持Node.js多版本自由切换
 
 ### PM2
 
-nodejs守护程序
+Node.js守护程序
 
 ### nodemon
 
@@ -92,7 +92,7 @@ GIt ...
 
 ## Vagrant box指南
 
-先下载定制的Nodejs Vagrant Box文件，解压后有如下文件。
+先下载定制的Node.js Vagrant Box文件，解压后有如下文件。
 
 ```bash
 .
