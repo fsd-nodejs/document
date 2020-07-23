@@ -1,5 +1,7 @@
 # Node.js全栈开发文档
 
+预览: https://fsd-nodejs.github.io/document/
+
 > 特别说明，该文档参照和部分引用[Summer](https://learnku.com/users/1)编写的编程规范
 
 
